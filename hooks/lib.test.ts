@@ -33,7 +33,12 @@ test('page escapes config so a value cannot close the script tag', async () => {
     skipped: [],
     viewer: { css: '', js: '' },
   })
+  expect(html.startsWith('<!doctype html>')).toBe(true)
+  expect(html).toContain('<meta charset="utf-8">')
+  expect(html).toContain('<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">')
+  expect(html).toContain('<meta name="color-scheme" content="light dark">')
   expect(html).toContain('<title>x &lt;b&gt;</title>')
+  expect(html).toContain('</body>\n</html>')
   // every close matches an open: no inlined value ends its script early
   expect(html.match(/<\/script>/g)?.length).toBe(html.match(/<script/g)?.length)
 })
