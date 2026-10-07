@@ -1,8 +1,8 @@
 # session-export
 
-A Claude Code session goes wrong: a tool call failed without a word, Claude ignored an instruction, or the context filled up faster than you expected. To find out why, you need what Claude saw. The built-in `/export` gives you the terminal, the messages you watched scroll by. It leaves out the tool results, the reminders Claude Code injects, the subagent runs and the settings the session ran under.
+A Claude Code session goes wrong: a tool call failed without a word, Claude ignored an instruction, or the context filled up faster than you expected. The person who can fix it may not have been there. It might be a teammate who maintains your setup, or the author of the plugin or skill involved. To help, they need what Claude saw, and they need it without a call where you walk them through your screen. The built-in `/export` only gives them the terminal, the messages you watched scroll by. It leaves out the tool results, the reminders Claude Code injects, the subagent runs and the settings the session ran under.
 
-This plugin keeps the whole record and makes it readable. One command turns the session into a private claude.ai page that puts the raw transcript next to a viewer and the configuration the session used. You can work out what happened yourself, or send the link to the teammate who has to.
+This plugin packs the whole record into one link. `/export-session` turns the session into a private claude.ai page with a viewer for the transcript, the configuration the session used and the raw files. You share the link, and the other person traces what happened on their own time, from the same evidence you had.
 
 ![The export page for a sample session: header with the context bar, transcript outline, and tool calls](docs/screenshot.png)
 
@@ -26,6 +26,8 @@ At the prompt of a Claude Code session:
 ```
 
 Answer `y` to add the marketplace, then pick a scope. The command works at once, with no restart. Run `/export-session` again in the same session to update the same page.
+
+To hand the session over, open the page's **Share** menu and add the people who will troubleshoot it, or your whole organization.
 
 ## The page in detail
 
