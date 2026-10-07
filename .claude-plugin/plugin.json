@@ -1,0 +1,8 @@
+{
+  "name": "session-export",
+  "version": "0.1.0",
+  "description": "/export-session: publish an artifact with the session's redacted config, a transcript viewer and the full JSONL to download",
+  "author": { "name": "Axel Cateland" },
+  "repository": "https://github.com/cateland/claude-session-export",
+  "license": "MIT"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "cateland",
+  "description": "Claude Code plugins by Axel Cateland",
+  "owner": { "name": "Axel Cateland" },
+  "plugins": [{ "name": "session-export", "source": "./" }]
+}
