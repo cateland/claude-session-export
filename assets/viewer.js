@@ -434,7 +434,8 @@ let syncFrame = 0
 const render = (root, transcripts, current, { entries, stats }) => {
   const minutes = stats.first && stats.last ? Math.round((new Date(stats.last) - new Date(stats.first)) / 60000) : 0
   const flash = node => {
-    node.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    const behavior = matchMedia('(prefers-reduced-motion: no-preference)').matches ? 'smooth' : 'auto'
+    node.scrollIntoView({ behavior, block: 'center' })
     node.classList.remove('flash'); void node.offsetWidth; node.classList.add('flash')
   }
   const search = el('input', { id: 'tx-search', type: 'search', placeholder: 'Search the outline', 'aria-label': 'Search the outline' })
